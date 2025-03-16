@@ -532,11 +532,12 @@ body.offcanvas .colorlib-nav-toggle {
 .colorlib-about,
 .colorlib-services,
 .colorlib-contact {
-  padding-top: 4em;
-  padding-bottom: 5em;
+  padding-top: 4em !important;
+  padding-bottom: 5em !important; 
   clear: both;
   width: 100%;
   display: block;
+  margin-bottom: 10px !important; /* or 0px to remove completely */
 }
 
 @media screen and (max-width: 768px) {
@@ -549,8 +550,8 @@ body.offcanvas .colorlib-nav-toggle {
   .colorlib-about,
   .colorlib-services,
   .colorlib-contact {
-    padding-top: 5em;
-    padding-bottom: 4em;
+    padding-top: 5em !important;
+    padding-bottom: 4em !important;
   }
 }
 
