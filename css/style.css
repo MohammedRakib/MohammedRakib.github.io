@@ -26,18 +26,6 @@ body {
   }
 }
 
-section {
-  padding-top: 4em;
-  padding-bottom: 4em;
-}
-
-@media screen and (max-width: 768px) {
-  section {
-    padding-top: 5em;
-    padding-bottom: 4em;
-  }
-}
-
 
 a {
   color: #2c98f0;
@@ -2021,4 +2009,17 @@ body.offcanvas .colorlib-nav-toggle {
 
 .js .animate-box {
   opacity: 0;
+}
+
+
+section {
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+
+@media screen and (max-width: 768px) {
+  section {
+    padding-top: 5em;
+    padding-bottom: 4em;
+  }
 }
