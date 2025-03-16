@@ -533,7 +533,7 @@ body.offcanvas .colorlib-nav-toggle {
 .colorlib-services,
 .colorlib-contact {
   padding-top: 4em;
-  padding-bottom: 9em;
+  padding-bottom: 5em;
   clear: both;
   width: 100%;
   display: block;
@@ -550,7 +550,7 @@ body.offcanvas .colorlib-nav-toggle {
   .colorlib-services,
   .colorlib-contact {
     padding-top: 5em;
-    padding-bottom: 8em;
+    padding-bottom: 4em;
   }
 }
 
@@ -2009,17 +2009,4 @@ body.offcanvas .colorlib-nav-toggle {
 
 .js .animate-box {
   opacity: 0;
-}
-
-
-section {
-  padding-top: 4em;
-  padding-bottom: 4em;
-}
-
-@media screen and (max-width: 768px) {
-  section {
-    padding-top: 5em;
-    padding-bottom: 4em;
-  }
 }
