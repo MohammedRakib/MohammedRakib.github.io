@@ -79,9 +79,12 @@
       <nav class="site-nav" id="site-navigation" aria-label="Primary navigation">
         <a href="#about">About</a>
         <a href="#news">News</a>
+        <a href="#education">Education</a>
         <a href="#experience">Experience</a>
-        <a href="#research">Research</a>
         <a href="#publications">Publications</a>
+        <a href="#research">Projects</a>
+        <a href="#awards">Awards</a>
+        <a href="#service">Service</a>
         <a href="#contact">Contact</a>
         <a class="nav-cta" href="resume/Academic_CV_Rakib___2024.pdf" target="_blank" rel="noopener noreferrer">CV</a>
       </nav>
@@ -170,9 +173,8 @@
         <div class="section-top" data-reveal>
           <div class="section-heading">
             <p class="section-kicker">Updates</p>
-            <h2 id="news-title">Recent news</h2>
+            <h2 id="news-title">Recent News</h2>
           </div>
-          <p>Research, career milestones, service, and recognition. Newest updates appear first.</p>
         </div>
         <div class="news-grid" id="news-list">
           <!-- Add updates in content/news.js. This static content is the no-JavaScript fallback. -->
@@ -200,8 +202,84 @@
             <p>Began a Summer 2026 internship building ML-powered storage intelligence for the NuBlox platform.</p>
             <div class="news-links"><a href="https://www.ebay.com/" target="_blank" rel="noopener noreferrer">eBay ↗</a></div>
           </article>
+          <article class="news-card">
+            <div class="news-meta"><time datetime="2025-10">Oct 2025</time><span class="news-category">Publication</span></div>
+            <h3><a href="https://2025.aaclnet.org/" target="_blank" rel="noopener noreferrer">Short paper accepted at IJCNLP-AACL 2025</a></h3>
+            <p>A short paper was accepted at the 2025 IJCNLP-AACL conference.</p>
+            <div class="news-links"><a href="https://2025.aaclnet.org/" target="_blank" rel="noopener noreferrer">IJCNLP-AACL 2025 ↗</a></div>
+          </article>
+          <article class="news-card">
+            <div class="news-meta"><time datetime="2025-09">Sep 2025</time><span class="news-category">Milestone</span></div>
+            <h3><a href="https://cs.okstate.edu/csprograms/phd/comprehensive_exam.html" target="_blank" rel="noopener noreferrer">PhD comprehensive exam completed</a></h3>
+            <p>Successfully completed Oklahoma State University&rsquo;s Computer Science PhD comprehensive examination.</p>
+            <div class="news-links"><a href="https://cs.okstate.edu/csprograms/phd/comprehensive_exam.html" target="_blank" rel="noopener noreferrer">Program milestone ↗</a></div>
+          </article>
+          <article class="news-card">
+            <div class="news-meta"><time datetime="2025-07">Jul 2025</time><span class="news-category">Milestone</span></div>
+            <h3><a href="https://cs.okstate.edu/csprograms/phd/diagnostic_exam.html" target="_blank" rel="noopener noreferrer">PhD diagnostic exam completed</a></h3>
+            <p>Successfully completed Oklahoma State University&rsquo;s Computer Science PhD diagnostic examination.</p>
+            <div class="news-links"><a href="https://cs.okstate.edu/csprograms/phd/diagnostic_exam.html" target="_blank" rel="noopener noreferrer">Program milestone ↗</a></div>
+          </article>
+          <article class="news-card">
+            <div class="news-meta"><time datetime="2025-06">Jun 2025</time><span class="news-category">Publication</span></div>
+            <h3><a href="https://iccv.thecvf.com/" target="_blank" rel="noopener noreferrer">G&sup2;D accepted at ICCV 2025</a></h3>
+            <p>First-author work on gradient-guided distillation for multimodal learning was accepted at ICCV.</p>
+            <div class="news-links"><a href="https://iccv.thecvf.com/" target="_blank" rel="noopener noreferrer">ICCV 2025 ↗</a></div>
+          </article>
+          <article class="news-card">
+            <div class="news-meta"><time datetime="2025-06">Jun 2025</time><span class="news-category">Publication</span></div>
+            <h3><a href="https://asonam.cpsc.ucalgary.ca/2025/" target="_blank" rel="noopener noreferrer">Short paper accepted at ASONAM 2025</a></h3>
+            <p>A short paper was accepted at the 2025 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining.</p>
+            <div class="news-links"><a href="https://asonam.cpsc.ucalgary.ca/2025/" target="_blank" rel="noopener noreferrer">ASONAM 2025 ↗</a></div>
+          </article>
+          <article class="news-card">
+            <div class="news-meta"><time datetime="2025-05">May 2025</time><span class="news-category">Service</span></div>
+            <h3><a href="https://iccv.thecvf.com/Conferences/2025" target="_blank" rel="noopener noreferrer">Reviewer for ICCV 2025</a></h3>
+            <p>Served as a peer reviewer for the International Conference on Computer Vision.</p>
+            <div class="news-links"><a href="https://iccv.thecvf.com/Conferences/2025" target="_blank" rel="noopener noreferrer">ICCV 2025 ↗</a></div>
+          </article>
         </div>
-        <noscript><p class="noscript-note">The four most recent updates are shown because JavaScript is disabled.</p></noscript>
+        <div class="news-actions">
+          <button class="news-toggle" id="news-toggle" type="button" aria-controls="news-list" aria-expanded="false" hidden>Show more news</button>
+        </div>
+        <noscript><p class="noscript-note">The ten most recent updates are shown because JavaScript is disabled.</p></noscript>
+      </div>
+    </section>
+
+    <section class="section education-section" id="education" aria-labelledby="education-title">
+      <div class="container">
+        <div class="section-top" data-reveal>
+          <div class="section-heading">
+            <p class="section-kicker">Academic background</p>
+            <h2 id="education-title">Education</h2>
+          </div>
+        </div>
+
+        <!-- Add future degrees or certificates here. See content/UPDATE_GUIDE.md. -->
+        <div class="education-grid" id="education-list">
+          <article class="education-card" data-reveal>
+            <div class="education-logo"><img src="images/OSU.png" width="112" height="58" alt="Oklahoma State University logo" loading="lazy"></div>
+            <p class="degree-date">2023 - Present</p>
+            <h3>PhD, Computer Science</h3>
+            <p>Oklahoma State University<br>Stillwater, Oklahoma</p>
+            <span class="grade">GPA 3.88</span>
+          </article>
+          <article class="education-card" data-reveal>
+            <div class="education-logo"><img src="images/OSU.png" width="112" height="58" alt="Oklahoma State University logo" loading="lazy"></div>
+            <p class="degree-date">2023 - May 2026</p>
+            <h3>MS, Computer Science</h3>
+            <p>Oklahoma State University<br>Stillwater, Oklahoma</p>
+            <span class="grade">GPA 3.82</span>
+            <small>Big Data Analytics; Cloud Computing &amp; Distributed Systems; Data Structure &amp; Algorithms II; Database Systems</small>
+          </article>
+          <article class="education-card" data-reveal>
+            <div class="education-logo education-logo-nsu"><img src="images/NSU.png" width="72" height="86" alt="North South University logo" loading="lazy"></div>
+            <p class="degree-date">Sep 2017 - Sep 2021</p>
+            <h3>BS, Computer Science &amp; Engineering</h3>
+            <p>North South University<br>Dhaka, Bangladesh</p>
+            <span class="grade">GPA 3.96 &middot; Summa Cum Laude</span>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -212,13 +290,12 @@
             <p class="section-kicker">Background</p>
             <h2 id="experience-title">Experience</h2>
           </div>
-          <p>Industry engineering, applied research, and university teaching across the complete ML lifecycle.</p>
         </div>
 
         <!-- Add new experience entries at the top of this timeline. See content/UPDATE_GUIDE.md. -->
         <div class="timeline" id="experience-list">
           <article class="timeline-item" data-reveal>
-            <div class="timeline-meta"><time datetime="2026-05">May 2026 &mdash; Aug 2026</time><span>San Jose, California</span></div>
+            <div class="timeline-meta"><time datetime="2026-05">May 2026 - Aug 2026</time><span>San Jose, California</span></div>
             <div class="timeline-card">
               <div class="role-heading">
                 <img class="company-logo company-logo-wide" src="images/ebay-logo.png" width="738" height="414" alt="" loading="lazy">
@@ -234,7 +311,7 @@
           </article>
 
           <article class="timeline-item" data-reveal>
-            <div class="timeline-meta"><time datetime="2023-08">Aug 2023 &mdash; Present</time><span>Stillwater, Oklahoma</span></div>
+            <div class="timeline-meta"><time datetime="2023-08">Aug 2023 - Present</time><span>Stillwater, Oklahoma</span></div>
             <div class="timeline-card">
               <div class="role-heading">
                 <img class="company-logo" src="images/OSU.png" width="108" height="56" alt="" loading="lazy">
@@ -250,7 +327,7 @@
           </article>
 
           <article class="timeline-item" data-reveal>
-            <div class="timeline-meta"><time datetime="2023-08">Aug 2023 &mdash; Present</time><span>Stillwater, Oklahoma</span></div>
+            <div class="timeline-meta"><time datetime="2023-08">Aug 2023 - Present</time><span>Stillwater, Oklahoma</span></div>
             <div class="timeline-card">
               <div class="role-heading">
                 <img class="company-logo" src="images/OSU.png" width="108" height="56" alt="" loading="lazy">
@@ -265,7 +342,7 @@
           </article>
 
           <article class="timeline-item" data-reveal>
-            <div class="timeline-meta"><time datetime="2022-06">Jun 2022 &mdash; Jul 2023</time><span>Dhaka, Bangladesh</span></div>
+            <div class="timeline-meta"><time datetime="2022-06">Jun 2022 - Jul 2023</time><span>Dhaka, Bangladesh</span></div>
             <div class="timeline-card">
               <div class="role-heading">
                 <img class="company-logo company-logo-square" src="images/Neovotech.jpeg" width="64" height="64" alt="" loading="lazy">
@@ -281,7 +358,7 @@
           </article>
 
           <article class="timeline-item" data-reveal>
-            <div class="timeline-meta"><time datetime="2021-09">Sep 2021 &mdash; Sep 2022</time><span>Dhaka, Bangladesh</span></div>
+            <div class="timeline-meta"><time datetime="2021-09">Sep 2021 - Sep 2022</time><span>Dhaka, Bangladesh</span></div>
             <div class="timeline-card">
               <div class="role-heading">
                 <img class="company-logo company-logo-square" src="images/ApurbaLab.jpeg" width="64" height="64" alt="" loading="lazy">
@@ -299,80 +376,6 @@
       </div>
     </section>
 
-    <section class="section research-section" id="research" aria-labelledby="research-title">
-      <div class="container">
-        <div class="section-top" data-reveal>
-          <div class="section-heading">
-            <p class="section-kicker">Selected work</p>
-            <h2 id="research-title">Research and projects</h2>
-          </div>
-          <p>Selected systems and research contributions across multimodal AI, high-energy physics, language, and distributed computing.</p>
-        </div>
-
-        <!-- Add major projects here; add older or smaller work to the archive below. -->
-        <div class="project-grid" id="project-list">
-          <article class="project-card project-featured" data-reveal>
-            <div class="project-top"><span class="project-index">01</span><span class="project-year">KDD 2026</span></div>
-            <h3>PhyGHT</h3>
-            <p class="project-subtitle">Physics-Guided HyperGraph Transformer for Signal Purification at the HL-LHC</p>
-            <p>Designed a physics-guided hypergraph transformer for pileup mitigation, reaching R&sup2; = 0.932 for energy and R&sup2; = 0.836 for mass correction under extreme pileup.</p>
-            <div class="metric-row"><span><strong>40.4 ms</strong> latency</span><span><strong>8.7&times;</strong> faster than ParticleNet</span></div>
-            <a class="project-link" href="https://github.com/rAIson-Lab/PhyGHT" target="_blank" rel="noopener noreferrer">View project <span aria-hidden="true">↗</span></a>
-          </article>
-
-          <article class="project-card project-featured alt" data-reveal>
-            <div class="project-top"><span class="project-index">02</span><span class="project-year">ICCV 2025</span></div>
-            <h3>G&sup2;D</h3>
-            <p class="project-subtitle">Gradient-Guided Distillation for Multimodal Learning</p>
-            <p>Created an open-source knowledge-distillation framework and Sequential Modality Prioritization technique to counter modality imbalance.</p>
-            <div class="metric-row"><span><strong>18%+</strong> accuracy gain</span><span><strong>0.5%</strong> memory overhead</span></div>
-            <a class="project-link" href="https://github.com/rAIson-Lab/G2D" target="_blank" rel="noopener noreferrer">View project <span aria-hidden="true">↗</span></a>
-          </article>
-
-          <article class="project-card" data-reveal>
-            <div class="project-top"><span class="project-index">03</span><span class="project-year">DSAA 2024</span></div>
-            <h3>MIS-ME</h3>
-            <p>Fused soil-patch imagery with meteorological data, reducing MAPE by 3.25% over meteorological-only models, 2.15% over image-only models, and at least 1.5% over conventional fusion.</p>
-            <a class="project-link" href="https://ieeexplore.ieee.org/abstract/document/10722779" target="_blank" rel="noopener noreferrer">Read the paper <span aria-hidden="true">↗</span></a>
-          </article>
-
-          <article class="project-card" data-reveal>
-            <div class="project-top"><span class="project-index">04</span><span class="project-year">ICSCA 2023</span></div>
-            <h3>Bangla-Wave</h3>
-            <p>Fine-tuned wav2vec 2.0 on 399 hours of Bengali speech and added an n-gram post-processor, achieving 4.66% WER and 1.54% CER.</p>
-            <a class="project-link" href="https://arxiv.org/abs/2209.12650" target="_blank" rel="noopener noreferrer">Read the paper <span aria-hidden="true">↗</span></a>
-          </article>
-
-          <article class="project-card" data-reveal>
-            <div class="project-top"><span class="project-index">05</span><span class="project-year">Open source</span></div>
-            <h3>Contract language intelligence</h3>
-            <p>Co-led an end-to-end legal-contract review application, improving RoBERTa-base AUPR by 4% and reaching 20K monthly model downloads.</p>
-            <a class="project-link" href="https://github.com/afra-tech/defactolaw" target="_blank" rel="noopener noreferrer">View project <span aria-hidden="true">↗</span></a>
-          </article>
-
-          <article class="project-card" data-reveal>
-            <div class="project-top"><span class="project-index">06</span><span class="project-year">Distributed systems</span></div>
-            <h3>Hadoop k-NN</h3>
-            <p>Engineered a distributed k-NN classifier from scratch with a memory-efficient priority-queue reducer and benchmarked it on single- and multi-node Hadoop clusters.</p>
-          </article>
-        </div>
-
-        <details class="project-archive" data-reveal>
-          <summary><span>Explore the complete project archive</span><span aria-hidden="true">+</span></summary>
-          <div class="archive-grid" id="project-archive-list">
-            <article><h3>PUMiNet</h3><p>Event-wide attention for HL-LHC pileup mitigation; R&sup2; of 0.912 for energy fraction and 0.720 for mass fraction, enabling improved Higgs-boson mass reconstruction.</p><a href="https://arxiv.org/abs/2503.02860" target="_blank" rel="noopener noreferrer">Paper ↗</a></article>
-            <article><h3>Adaptive Contextual Masking</h3><p>Gradient-learned masking for aspect term extraction and sentiment classification that outperformed comparison methods on SemEval benchmarks.</p><a href="https://doi.org/10.1007/978-981-97-2266-2_12" target="_blank" rel="noopener noreferrer">Paper ↗</a></article>
-            <article><h3>COLT</h3><p>Class-wise overlapping lottery tickets that required fewer pruning iterations than IMP and transferred across datasets without performance loss.</p><a href="https://ieeexplore.ieee.org/abstract/document/10855806" target="_blank" rel="noopener noreferrer">Paper ↗</a></article>
-            <article><h3>LILA-BOTI</h3><p>Knowledge distillation for Bangla handwriting recognition, improving minor-class F1-Macro by up to 3.5% and overall word recognition by up to 4%.</p><a href="https://doi.org/10.1109/ICPR56361.2022.9956141" target="_blank" rel="noopener noreferrer">Paper ↗</a></article>
-            <article><h3>Water-level forecasting</h3><p>Spatiotemporal attention LSTM for river forecasting in Bangladesh, improving Dhaka-station accuracy by 3.44%.</p><a href="https://doi.org/10.3390/w14040612" target="_blank" rel="noopener noreferrer">Paper ↗</a></article>
-            <article><h3>IoT air-quality system</h3><p>Led a team of three building a sensor-to-cloud system and ARIMA model using 144 hourly observations for next-day forecasts with over 90% reported accuracy.</p><a href="https://doi.org/10.1109/ICISET54810.2022.9775871" target="_blank" rel="noopener noreferrer">Paper ↗</a></article>
-            <article><h3>My Reading Room</h3><p>Django learning platform with document sharing, reading-time tracking, and OpenCV-based engagement monitoring.</p></article>
-            <article><h3>AgeDB age estimation</h3><p>Fine-tuned ResNet-152 with CORAL loss to 9.07-year MAE versus the cited DEX result of 13.1, using 20&times; fewer samples; CORAL outperformed cross-entropy.</p></article>
-          </div>
-        </details>
-      </div>
-    </section>
-
     <section class="section publications-section" id="publications" aria-labelledby="publications-title">
       <div class="container publications-layout">
         <div class="publications-intro" data-reveal>
@@ -380,7 +383,6 @@
             <p class="section-kicker">Research output</p>
             <h2 id="publications-title">Publications</h2>
           </div>
-          <p>Work across multimodal learning, high-energy physics, natural language processing, computer vision, agriculture, and environmental forecasting.</p>
           <a class="button button-secondary" href="https://scholar.google.com/citations?user=0EUEx3EAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Full Google Scholar profile ↗</a>
         </div>
 
@@ -402,50 +404,199 @@
       </div>
     </section>
 
-    <section class="section education-section" id="education" aria-labelledby="education-title">
+    <section class="section research-section" id="research" aria-labelledby="research-title">
       <div class="container">
         <div class="section-top" data-reveal>
           <div class="section-heading">
-            <p class="section-kicker">Academic background</p>
-            <h2 id="education-title">Education</h2>
+            <p class="section-kicker">Selected work</p>
+            <h2 id="research-title">Research Projects</h2>
           </div>
-          <p>Computer science training spanning research, systems, algorithms, databases, and distributed computing.</p>
         </div>
 
-        <!-- Add future degrees or certificates here. See content/UPDATE_GUIDE.md. -->
-        <div class="education-grid" id="education-list">
-          <article class="education-card" data-reveal>
-            <div class="education-logo"><img src="images/OSU.png" width="112" height="58" alt="Oklahoma State University logo" loading="lazy"></div>
-            <p class="degree-date">2023 &mdash; Present</p>
-            <h3>PhD, Computer Science</h3>
-            <p>Oklahoma State University<br>Stillwater, Oklahoma</p>
-            <span class="grade">GPA 3.88</span>
+        <!-- Every project uses the same card structure. See content/UPDATE_GUIDE.md. -->
+        <div class="project-grid" id="project-list">
+          <article class="project-card" data-reveal>
+            <div class="project-content">
+              <div class="project-top"><span class="project-index">01</span><span class="project-year">KDD 2026</span></div>
+              <h3>PhyGHT: Physics-Guided HyperGraph Transformer for Signal Purification at the HL-LHC</h3>
+              <p>Designed a physics-guided hypergraph transformer for pileup mitigation, reaching R&sup2; = 0.932 for energy and R&sup2; = 0.836 for mass correction under extreme pileup.</p>
+              <div class="metric-row"><span><strong>40.4 ms</strong> latency</span><span><strong>8.7&times;</strong> faster than ParticleNet</span></div>
+              <a class="project-link" href="https://github.com/rAIson-Lab/PhyGHT" target="_blank" rel="noopener noreferrer">View project <span aria-hidden="true">↗</span></a>
+            </div>
+            <figure class="project-figure">
+              <a class="project-figure-link" href="https://arxiv.org/abs/2602.20475" target="_blank" rel="noopener noreferrer" aria-label="Open the paper for PhyGHT"><img src="images/projects/phyght-architecture.png" alt="PhyGHT model architecture for physics-guided particle pileup mitigation" loading="lazy" decoding="async"></a>
+              <figcaption>PhyGHT architecture &middot; <a href="https://arxiv.org/abs/2602.20475" target="_blank" rel="noopener noreferrer">Paper</a></figcaption>
+            </figure>
           </article>
-          <article class="education-card" data-reveal>
-            <div class="education-logo"><img src="images/OSU.png" width="112" height="58" alt="Oklahoma State University logo" loading="lazy"></div>
-            <p class="degree-date">2023 &mdash; May 2026</p>
-            <h3>MS, Computer Science</h3>
-            <p>Oklahoma State University<br>Stillwater, Oklahoma</p>
-            <span class="grade">GPA 3.82</span>
-            <small>Big Data Analytics; Cloud Computing &amp; Distributed Systems; Data Structure &amp; Algorithms II; Database Systems</small>
+
+          <article class="project-card" data-reveal>
+            <div class="project-content">
+              <div class="project-top"><span class="project-index">02</span><span class="project-year">ICCV 2025</span></div>
+              <h3>G&sup2;D: Boosting Multimodal Learning with Gradient-Guided Distillation</h3>
+              <p>Created an open-source knowledge-distillation framework and Sequential Modality Prioritization technique to counter modality imbalance.</p>
+              <div class="metric-row"><span><strong>18%+</strong> accuracy gain</span><span><strong>0.5%</strong> memory overhead</span></div>
+              <a class="project-link" href="https://github.com/rAIson-Lab/G2D" target="_blank" rel="noopener noreferrer">View project <span aria-hidden="true">↗</span></a>
+            </div>
+            <figure class="project-figure">
+              <a class="project-figure-link" href="https://arxiv.org/abs/2506.21514" target="_blank" rel="noopener noreferrer" aria-label="Open the paper for G squared D"><img src="images/projects/g2d-architecture.png" alt="G squared D gradient-guided distillation architecture for multimodal learning" loading="lazy" decoding="async"></a>
+              <figcaption>G&sup2;D architecture &middot; <a href="https://arxiv.org/abs/2506.21514" target="_blank" rel="noopener noreferrer">Paper</a></figcaption>
+            </figure>
           </article>
-          <article class="education-card" data-reveal>
-            <div class="education-logo education-logo-nsu"><img src="images/NSU.png" width="72" height="86" alt="North South University logo" loading="lazy"></div>
-            <p class="degree-date">Sep 2017 &mdash; Sep 2021</p>
-            <h3>BS, Computer Science &amp; Engineering</h3>
-            <p>North South University<br>Dhaka, Bangladesh</p>
-            <span class="grade">GPA 3.96 &middot; Summa Cum Laude</span>
+
+          <article class="project-card" data-reveal>
+            <div class="project-content">
+              <div class="project-top"><span class="project-index">03</span><span class="project-year">DSAA 2024</span></div>
+              <h3>MIS-ME: A Multi-modal Framework for Soil Moisture Estimation</h3>
+              <p>Fused soil-patch imagery with meteorological data, reducing MAPE by 3.25% over meteorological-only models, 2.15% over image-only models, and at least 1.5% over conventional fusion.</p>
+              <a class="project-link" href="https://ieeexplore.ieee.org/abstract/document/10722779" target="_blank" rel="noopener noreferrer">Read the paper <span aria-hidden="true">↗</span></a>
+            </div>
+            <figure class="project-figure">
+              <a class="project-figure-link" href="https://arxiv.org/abs/2408.00963" target="_blank" rel="noopener noreferrer" aria-label="Open the paper for MIS-ME"><img src="images/projects/mis-me-architecture.png" alt="MIS-ME multimodal architecture combining soil images and meteorological data" loading="lazy" decoding="async"></a>
+              <figcaption>MIS-ME multimodal architecture &middot; <a href="https://arxiv.org/abs/2408.00963" target="_blank" rel="noopener noreferrer">Paper</a></figcaption>
+            </figure>
           </article>
+
+          <article class="project-card" data-reveal>
+            <div class="project-content">
+              <div class="project-top"><span class="project-index">04</span><span class="project-year">ICSCA 2023</span></div>
+              <h3>Bangla-Wave: Improving Bangla Automatic Speech Recognition Utilizing N-gram Language Models</h3>
+              <p>Fine-tuned wav2vec 2.0 on 399 hours of Bengali speech and added an n-gram post-processor, achieving 4.66% WER and 1.54% CER.</p>
+              <a class="project-link" href="https://arxiv.org/abs/2209.12650" target="_blank" rel="noopener noreferrer">Read the paper <span aria-hidden="true">↗</span></a>
+            </div>
+            <figure class="project-figure">
+              <a class="project-figure-link" href="https://arxiv.org/abs/2209.12650" target="_blank" rel="noopener noreferrer" aria-label="Open the paper for Bangla-Wave"><img src="images/projects/bangla-wave-architecture.png" alt="Bangla-Wave speech recognition and language-model correction pipeline" loading="lazy" decoding="async"></a>
+              <figcaption>Bangla-Wave pipeline &middot; <a href="https://arxiv.org/abs/2209.12650" target="_blank" rel="noopener noreferrer">Paper</a></figcaption>
+            </figure>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <div class="project-content">
+              <div class="project-top"><span class="project-index">05</span><span class="project-year">Open source</span></div>
+              <h3>An Open Source Contractual Language Understanding Application Using Machine Learning</h3>
+              <p>Co-led an end-to-end legal-contract review application, improving RoBERTa-base AUPR by 4% and reaching 20K monthly model downloads.</p>
+              <a class="project-link" href="https://github.com/afra-tech/defactolaw" target="_blank" rel="noopener noreferrer">View project <span aria-hidden="true">↗</span></a>
+            </div>
+            <figure class="project-figure">
+              <a class="project-figure-link" href="https://aclanthology.org/2022.lateraisse-1.6/" target="_blank" rel="noopener noreferrer" aria-label="Open the paper for the contract-language review application"><img src="images/projects/contract-system-diagram.png" alt="System diagram for the contract-language review application from document upload to highlighted clauses" loading="lazy" decoding="async"></a>
+              <figcaption>Contract-review system &middot; <a href="https://aclanthology.org/2022.lateraisse-1.6/" target="_blank" rel="noopener noreferrer">Paper</a></figcaption>
+            </figure>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <div class="project-content">
+              <div class="project-top"><span class="project-index">06</span><span class="project-year">Distributed systems</span></div>
+              <h3>Distributed k-NN with Hadoop MapReduce</h3>
+              <p>Engineered a distributed k-NN classifier from scratch with a memory-efficient priority-queue reducer and benchmarked it on single- and multi-node Hadoop clusters.</p>
+            </div>
+            <figure class="project-figure">
+              <img src="images/projects/hadoop-knn-mapreduce.png" alt="Distributed k-NN pipeline using HDFS data blocks, parallel Hadoop mappers, a global top-k reducer, and majority-vote prediction" loading="lazy" decoding="async">
+              <figcaption>Distributed k-NN MapReduce pipeline</figcaption>
+            </figure>
+          </article>
+            <article class="project-card" data-reveal>
+              <div class="project-content">
+                <div class="project-top"><span class="project-index">07</span><span class="project-year">PAKDD 2025</span></div>
+                <h3>PUMiNet: PileUp Mitigation at the HL-LHC Using Attention for Event-Wide Context</h3>
+                <p>Event-wide attention for HL-LHC pileup mitigation; R&sup2; of 0.912 for energy fraction and 0.720 for mass fraction, enabling improved Higgs-boson mass reconstruction.</p>
+                <a class="project-link" href="https://arxiv.org/abs/2503.02860" target="_blank" rel="noopener noreferrer">Paper ↗</a>
+              </div>
+              <figure class="project-figure">
+                <a class="project-figure-link" href="https://arxiv.org/abs/2503.02860" target="_blank" rel="noopener noreferrer" aria-label="Open the paper for PUMiNet"><img src="images/projects/puminet-architecture.png" alt="PUMiNet neural network architecture for event-wide pileup mitigation" loading="lazy" decoding="async"></a>
+                <figcaption>PUMiNet architecture &middot; <a href="https://arxiv.org/abs/2503.02860" target="_blank" rel="noopener noreferrer">Paper</a></figcaption>
+              </figure>
+            </article>
+            <article class="project-card" data-reveal>
+              <div class="project-content">
+                <div class="project-top"><span class="project-index">08</span><span class="project-year">PAKDD 2024</span></div>
+                <h3>Exploiting Adaptive Contextual Masking for Aspect-Based Sentiment Analysis</h3>
+                <p>Gradient-learned masking for aspect term extraction and sentiment classification that outperformed comparison methods on SemEval benchmarks.</p>
+                <a class="project-link" href="https://doi.org/10.1007/978-981-97-2266-2_12" target="_blank" rel="noopener noreferrer">Paper ↗</a>
+              </div>
+              <figure class="project-figure">
+                <a class="project-figure-link" href="https://arxiv.org/abs/2402.13722" target="_blank" rel="noopener noreferrer" aria-label="Open the paper for Adaptive Contextual Masking"><img src="images/projects/adaptive-contextual-masking.png" alt="Adaptive contextual masking threshold strategy for aspect-based sentiment analysis" loading="lazy" decoding="async"></a>
+                <figcaption>Adaptive masking strategy &middot; <a href="https://arxiv.org/abs/2402.13722" target="_blank" rel="noopener noreferrer">Paper</a></figcaption>
+              </figure>
+            </article>
+            <article class="project-card" data-reveal>
+              <div class="project-content">
+                <div class="project-top"><span class="project-index">09</span><span class="project-year">IEEE TAI 2025</span></div>
+                <h3>COLT: Cyclic Overlapping Lottery Tickets for Faster Pruning of Convolutional Neural Networks</h3>
+                <p>Class-wise overlapping lottery tickets that required fewer pruning iterations than IMP and transferred across datasets without performance loss.</p>
+                <a class="project-link" href="https://ieeexplore.ieee.org/abstract/document/10855806" target="_blank" rel="noopener noreferrer">Paper ↗</a>
+              </div>
+              <figure class="project-figure">
+                <a class="project-figure-link" href="https://arxiv.org/abs/2212.12770" target="_blank" rel="noopener noreferrer" aria-label="Open the paper for COLT"><img src="images/projects/colt-method.png" alt="COLT cyclic overlapping lottery ticket pruning method" loading="lazy" decoding="async"></a>
+                <figcaption>COLT pruning method &middot; <a href="https://arxiv.org/abs/2212.12770" target="_blank" rel="noopener noreferrer">Paper</a></figcaption>
+              </figure>
+            </article>
+            <article class="project-card" data-reveal>
+              <div class="project-content">
+                <div class="project-top"><span class="project-index">10</span><span class="project-year">ICPR 2022</span></div>
+                <h3>LILA-BOTI: Leveraging Isolated Letter Accumulations by Ordering Teacher Insights for Bangla Handwriting Recognition</h3>
+                <p>Knowledge distillation for Bangla handwriting recognition, improving minor-class F1-Macro by up to 3.5% and overall word recognition by up to 4%.</p>
+                <a class="project-link" href="https://doi.org/10.1109/ICPR56361.2022.9956141" target="_blank" rel="noopener noreferrer">Paper ↗</a>
+              </div>
+              <figure class="project-figure">
+                <a class="project-figure-link" href="https://arxiv.org/abs/2205.11420" target="_blank" rel="noopener noreferrer" aria-label="Open the paper for LILA-BOTI"><img src="images/projects/lila-boti-architecture.png" alt="LILA-BOTI teacher-student knowledge-distillation pipeline for Bangla handwriting recognition" loading="lazy" decoding="async"></a>
+                <figcaption>LILA-BOTI training pipeline &middot; <a href="https://arxiv.org/abs/2205.11420" target="_blank" rel="noopener noreferrer">Paper</a></figcaption>
+              </figure>
+            </article>
+            <article class="project-card" data-reveal>
+              <div class="project-content">
+                <div class="project-top"><span class="project-index">11</span><span class="project-year">Water 2022</span></div>
+                <h3>Water Level Forecasting Using Spatiotemporal Attention-Based Long Short-Term Memory Network</h3>
+                <p>Spatiotemporal attention LSTM for river forecasting in Bangladesh, improving Dhaka-station accuracy by 3.44%.</p>
+                <a class="project-link" href="https://doi.org/10.3390/w14040612" target="_blank" rel="noopener noreferrer">Paper ↗</a>
+              </div>
+              <figure class="project-figure">
+                <a class="project-figure-link" href="https://doi.org/10.3390/w14040612" target="_blank" rel="noopener noreferrer" aria-label="Open the paper for Water-level forecasting"><img src="images/projects/water-level-architecture.png" alt="Spatiotemporal attention LSTM architecture for water-level forecasting" loading="lazy" decoding="async"></a>
+                <figcaption>Spatiotemporal attention LSTM &middot; <a href="https://doi.org/10.3390/w14040612" target="_blank" rel="noopener noreferrer">Paper</a></figcaption>
+              </figure>
+            </article>
+            <article class="project-card" data-reveal>
+              <div class="project-content">
+                <div class="project-top"><span class="project-index">12</span><span class="project-year">ICISET 2022</span></div>
+                <h3>IoT-Based Air Pollution Monitoring &amp; Prediction System</h3>
+                <p>Led a team of three building a sensor-to-cloud system and ARIMA model using 144 hourly observations for next-day forecasts with over 90% reported accuracy.</p>
+                <a class="project-link" href="https://doi.org/10.1109/ICISET54810.2022.9775871" target="_blank" rel="noopener noreferrer">Paper ↗</a>
+              </div>
+              <figure class="project-figure">
+                <a class="project-figure-link" href="https://doi.org/10.1109/ICISET54810.2022.9775871" target="_blank" rel="noopener noreferrer" aria-label="Open the paper for the IoT air-quality system"><img src="images/projects/iot-air-quality-system.png" alt="Arduino Mega wiring diagram for the IoT air-quality system with dust, ammonia, carbon monoxide, temperature, humidity, and Wi-Fi sensors" loading="lazy" decoding="async"></a>
+                <figcaption>IoT sensor wiring diagram &middot; <a href="https://doi.org/10.1109/ICISET54810.2022.9775871" target="_blank" rel="noopener noreferrer">Paper</a></figcaption>
+              </figure>
+            </article>
+            <article class="project-card" data-reveal>
+              <div class="project-content">
+                <div class="project-top"><span class="project-index">13</span><span class="project-year">Open source</span></div>
+                <h3>My Reading Room</h3>
+                <p>Django learning platform with document sharing, reading-time tracking, and OpenCV-based engagement monitoring.</p>
+              </div>
+              <figure class="project-figure">
+                <a class="project-figure-link" href="https://github.com/MohammedRakib/My-Reading-Room" target="_blank" rel="noopener noreferrer" aria-label="Open the repository for My Reading Room"><img src="images/projects/my-reading-room-use-case.png" alt="My Reading Room use-case diagram showing teacher and student features for classes, reading materials, face detection, and reading analytics" loading="lazy" decoding="async"></a>
+                <figcaption>Reading Room use-case diagram &middot; <a href="https://github.com/MohammedRakib/My-Reading-Room" target="_blank" rel="noopener noreferrer">Repository</a></figcaption>
+              </figure>
+            </article>
+            <article class="project-card" data-reveal>
+              <div class="project-content">
+                <div class="project-top"><span class="project-index">14</span><span class="project-year">Computer vision</span></div>
+                <h3>AgeDB Age Estimation</h3>
+                <p>Fine-tuned ResNet-152 with CORAL loss to 9.07-year MAE versus the cited DEX result of 13.1, using 20&times; fewer samples; CORAL outperformed cross-entropy.</p>
+              </div>
+              <figure class="project-figure">
+                <a class="project-figure-link" href="https://github.com/MohammedRakib/Age-Classification" target="_blank" rel="noopener noreferrer" aria-label="Open the repository for AgeDB age estimation"><img src="images/projects/agedb-age-estimation.png" alt="CORAL age-estimation architecture with a ResNet backbone, extended ordinal labels, and weight-shared binary tasks" loading="lazy" decoding="async"></a>
+                <figcaption>CORAL age-estimation architecture &middot; <a href="https://github.com/MohammedRakib/Age-Classification" target="_blank" rel="noopener noreferrer">Repository</a></figcaption>
+              </figure>
+            </article>
         </div>
       </div>
     </section>
 
-    <section class="section recognition-section" id="recognition" aria-labelledby="recognition-title">
-      <div class="container recognition-grid">
+    <section class="section awards-section" id="awards" aria-labelledby="awards-title">
+      <div class="container">
         <div class="recognition-column" data-reveal>
           <div class="section-heading">
             <p class="section-kicker">Recognition</p>
-            <h2 id="recognition-title">Awards and honors</h2>
+            <h2 id="awards-title">Awards &amp; Honors</h2>
           </div>
           <!-- Add new awards at the top. See content/UPDATE_GUIDE.md. -->
           <ul class="recognition-list" id="awards-list">
@@ -457,11 +608,15 @@
             <li><span>2017</span><div><strong>Academic Excellence Award</strong><p>75% scholarship for the CSE bachelor&rsquo;s degree at NSU.</p></div></li>
           </ul>
         </div>
+      </div>
+    </section>
 
+    <section class="section service-section" id="service" aria-labelledby="service-title">
+      <div class="container">
         <div class="recognition-column service-column" data-reveal>
           <div class="section-heading">
             <p class="section-kicker">Academic contributions</p>
-            <h2>Service and teaching</h2>
+            <h2 id="service-title">Service &amp; Teaching</h2>
           </div>
           <!-- Add reviews, mentoring, workshops, and other service here. -->
           <ul class="service-list" id="service-list">
@@ -474,30 +629,10 @@
       </div>
     </section>
 
-    <section class="section skills-section" id="skills" aria-labelledby="skills-title">
-      <div class="container skills-layout">
-        <div class="section-heading" data-reveal>
-          <p class="section-kicker">Toolkit</p>
-          <h2 id="skills-title">Technical skills</h2>
-          <p>From model development and experimentation to APIs, infrastructure, observability, and data systems.</p>
-        </div>
-        <!-- Add or update skill groups here. See content/UPDATE_GUIDE.md. -->
-        <div class="skills-grid" id="skills-list" data-reveal>
-          <div><h3>AI &amp; data science</h3><p>PyTorch, TensorFlow, Keras, scikit-learn, Hugging Face, OpenCV, Pandas, Matplotlib, Seaborn, NLP, computer vision</p></div>
-          <div><h3>Languages</h3><p>Python, Java, C++, C, SQL, shell scripting, JavaScript, HTML, CSS, Arduino, x86 assembly</p></div>
-          <div><h3>Backend &amp; web</h3><p>FastAPI, Django, Flask, REST APIs, Nginx, Celery, RabbitMQ, Stripe integrations</p></div>
-          <div><h3>Cloud &amp; infrastructure</h3><p>AWS EC2 and S3, Docker, Kubernetes, Prometheus, PromQL, CronJobs</p></div>
-          <div><h3>Data &amp; distributed systems</h3><p>Apache Spark, Hadoop MapReduce, MySQL, PostgreSQL, MongoDB, Redis, NoSQL</p></div>
-          <div><h3>Engineering workflow</h3><p>Git, Bitbucket, Linux, testing, model deployment, monitoring, data pipelines</p></div>
-        </div>
-      </div>
-    </section>
-
     <section class="contact-section" id="contact" aria-labelledby="contact-title">
       <div class="container contact-card" data-reveal>
         <p class="section-kicker">Contact</p>
         <h2 id="contact-title">Contact</h2>
-        <p>I&rsquo;m always glad to connect about machine learning engineering, applied AI research, research collaboration, and systems that turn data into action.</p>
         <div class="contact-actions">
           <a class="button button-light" href="mailto:mohammed.rakib@okstate.edu">mohammed.rakib@okstate.edu</a>
           <a class="button button-outline-light" href="https://www.linkedin.com/in/mohammedrakib/" target="_blank" rel="noopener noreferrer">LinkedIn</a>

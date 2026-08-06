@@ -2,8 +2,22 @@
 
 The website has no build step and no database. Most future updates require editing one of two plain-text files:
 
-- `content/news.js` — announcements and chronological updates.
-- `content/cv.js` — permanent records shown in the main CV sections.
+- `content/news.js`: announcements and chronological updates.
+- `content/cv.js`: permanent records shown in the main CV sections.
+
+## Website structure
+
+| What to update | File |
+| --- | --- |
+| News, acceptances, awards, reviews, talks, and other dated announcements | `content/news.js` |
+| Experience, projects, publications, education, awards, and service | `content/cv.js` |
+| Introduction, About text, section headings, and static fallback content | `index.html` |
+| Typography, colors, spacing, and responsive layout | `css/style.css` |
+| Content rendering, navigation, and interactions | `js/main.js` |
+| Profile photos, project figures, and organization logos | `images/` |
+| Job resumes and academic CVs | `resume/` |
+
+The normal site is rendered from the content files. `index.html` also contains a static no-JavaScript fallback. Mirror permanent CV changes there when you want that fallback to remain identical.
 
 ## Which file should I edit?
 
@@ -16,7 +30,6 @@ The website has no build step and no database. Most future updates require editi
 | New project | `cv.js` → `projects`; optionally announce it in `news.js` |
 | Workshop, mentoring, teaching, or volunteering | `news.js`, and `cv.js` → `service` |
 | Degree or certificate | `cv.js` → `education`; optionally announce it in `news.js` |
-| New technology or tool | `cv.js` → `skillGroups` |
 | Any other achievement | `news.js` with any short category name |
 
 For an important event, adding one announcement and one permanent record is intentional: News records when it happened; the relevant CV section keeps it easy to find later.
@@ -64,22 +77,27 @@ Paste a new object into `projects`:
 
 ```js
 {
-  title: "Project name",
+  title: "Complete project or publication title",
   context: "Conference 2027",
-  subtitle: "Optional longer project title",
   summary: "One concise paragraph explaining the contribution and result.",
+  image: "images/projects/project-name.png",
+  imageAlt: "Concise description of the project diagram",
+  imageSource: "https://arxiv.org/abs/0000.00000",
+  imageSourceLabel: "Paper",
+  figureCaption: "Model architecture",
   metrics: [
     { value: "12%", label: "accuracy improvement" }
   ],
   links: [
     { label: "Project", url: "https://github.com/example/project" },
     { label: "Paper", url: "https://example.com/paper" }
-  ],
-  featured: true
+  ]
 },
 ```
 
-Use `featured: true` for the visible selected-project list. Use `featured: false` for the collapsible archive. If you omit `featured`, the project appears in the selected list. `context`, `subtitle`, `metrics`, and `links` are optional.
+Every project automatically appears in the two-column Research Projects grid. Use the complete project or publication title in `title`; there is no separate subtitle. The image fields are optional, but whenever you add `image`, also add descriptive `imageAlt`. Use `imageSource` to link the figure to its paper or repository, `imageSourceLabel` for the link text, and `figureCaption` for the short label shown below it. `imageSourceLabel` defaults to `Paper`. `context`, `metrics`, and `links` are optional.
+
+Place new project figures in `images/projects/` and use a clear lowercase filename such as `project-name-architecture.png`.
 
 ## Add experience
 
@@ -88,7 +106,7 @@ Paste a new object into `experience`:
 ```js
 {
   sortDate: "2027-05",
-  date: "May 2027 — Aug 2027",
+  date: "May 2027 - Aug 2027",
   location: "City, State",
   organization: "Organization",
   role: "Role title",
@@ -152,17 +170,6 @@ Paste a new object into `service`:
 
 `description` and `links` are optional. This same section can hold peer reviews, committee work, workshops, mentoring, talks, and volunteering.
 
-## Add or update skills
-
-Either add an item to an existing `items` list or add a new group:
-
-```js
-{
-  title: "New skill group",
-  items: ["Tool one", "Tool two", "Tool three"]
-},
-```
-
 ## Check changes before publishing
 
 Run the content validator:
@@ -178,3 +185,18 @@ python3 -m http.server 8000
 ```
 
 Open `http://localhost:8000`. The original HTML remains as a fallback, so an error in a content file will not erase the permanent sections from the page.
+
+## Publish changes
+
+After reviewing the website, run:
+
+```bash
+git status
+git diff --check
+git add -A
+git diff --cached --check
+git commit -m "Update academic portfolio"
+git push origin main
+```
+
+GitHub Pages publishes the website from this repository. After pushing, allow a few minutes for the live page to refresh.

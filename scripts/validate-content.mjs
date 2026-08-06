@@ -306,12 +306,17 @@ function validateProjects(value) {
 
     requireString(item.title, `${location}.title`);
     optionalString(item.context, `${location}.context`, { allowEmpty: true });
-    optionalString(item.subtitle, `${location}.subtitle`);
     requireString(item.summary, `${location}.summary`);
-    if (item.featured !== undefined && typeof item.featured !== "boolean") {
-      addError(`${location}.featured`, "must be a boolean");
+    optionalString(item.imageAlt, `${location}.imageAlt`);
+    optionalString(item.imageSourceLabel, `${location}.imageSourceLabel`);
+    optionalString(item.figureCaption, `${location}.figureCaption`);
+    if (item.image !== undefined) {
+      validateUrl(item.image, `${location}.image`);
+      if (item.imageAlt === undefined) {
+        addError(`${location}.imageAlt`, "is required when image is provided");
+      }
     }
-
+    if (item.imageSource !== undefined) validateUrl(item.imageSource, `${location}.imageSource`);
     const metrics = item.metrics === undefined ? [] : requireArray(item.metrics, `${location}.metrics`);
     metrics.forEach((metric, metricIndex) => {
       const metricLocation = `${location}.metrics[${metricIndex}]`;
@@ -403,19 +408,6 @@ function validateService(value) {
   return items;
 }
 
-function validateSkillGroups(value) {
-  const items = requireArray(value, "content/cv.js: PORTFOLIO_CV.skillGroups");
-
-  items.forEach((item, index) => {
-    const location = `content/cv.js: PORTFOLIO_CV.skillGroups[${index}]`;
-    if (!requireRecord(item, location)) return;
-    requireString(item.title, `${location}.title`);
-    validateStringArray(item.items, `${location}.items`, { allowEmpty: false });
-  });
-
-  return items;
-}
-
 async function validateLocalReferences() {
   const checked = new Set();
 
@@ -448,7 +440,6 @@ if (!requireRecord(cvWindow.PORTFOLIO_CV, "content/cv.js: window.PORTFOLIO_CV"))
   const education = validateEducation(cv.education);
   const awards = validateAwards(cv.awards);
   const service = validateService(cv.service);
-  const skillGroups = validateSkillGroups(cv.skillGroups);
 
   await validateLocalReferences();
 
@@ -457,7 +448,7 @@ if (!requireRecord(cvWindow.PORTFOLIO_CV, "content/cv.js: window.PORTFOLIO_CV"))
       `Content valid: ${news.length} news, ${experience.length} experience, ` +
       `${projects.length} projects, ${publications.length} publications, ` +
       `${education.length} education, ${awards.length} awards, ` +
-      `${service.length} service, ${skillGroups.length} skill groups.`
+      `${service.length} service.`
     );
   }
 }

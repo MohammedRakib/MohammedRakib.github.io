@@ -7,12 +7,11 @@
  *
  * Schemas:
  * experience: { sortDate, date, organization, role, location?, logo?, mark?, bullets?: [], tags?: [] }
- * projects: { title, summary, context?, subtitle?, metrics?: [{ value, label }], links?: [{ label, url }], featured? }
+ * projects: { title, summary, context?, image?, imageAlt?, imageSource?, imageSourceLabel?, figureCaption?, metrics?: [{ value, label }], links?: [{ label, url }] }
  * publications: { year, title, authors, venue, url? }
  * education: { sortDate, date, degree, school, location?, gpa?, honor?, details?, logo? }
  * awards: { year, title, description?, url? }
  * service: { title, description?, links?: [{ label, url }] }
- * skillGroups: { title, items: [] }
  *
  * Optional presentation fields used below: logoWidth, logoHeight, logoClass,
  * markClass, mark, and bulletLinks.
@@ -22,7 +21,7 @@ window.PORTFOLIO_CV = {
   experience: [
     {
       sortDate: "2026-05",
-      date: "May 2026 — Aug 2026",
+      date: "May 2026 - Aug 2026",
       location: "San Jose, California",
       organization: "eBay",
       role: "Software Engineer Intern",
@@ -39,7 +38,7 @@ window.PORTFOLIO_CV = {
     },
     {
       sortDate: "2023-08",
-      date: "Aug 2023 — Present",
+      date: "Aug 2023 - Present",
       location: "Stillwater, Oklahoma",
       organization: "rAIson (Reasoning & AI Laboratory), Oklahoma State University",
       role: "Graduate Research Assistant",
@@ -55,7 +54,7 @@ window.PORTFOLIO_CV = {
     },
     {
       sortDate: "2023-08",
-      date: "Aug 2023 — Present",
+      date: "Aug 2023 - Present",
       location: "Stillwater, Oklahoma",
       organization: "Department of Computer Science, OSU",
       role: "Graduate Teaching Assistant",
@@ -70,7 +69,7 @@ window.PORTFOLIO_CV = {
     },
     {
       sortDate: "2022-06",
-      date: "Jun 2022 — Jul 2023",
+      date: "Jun 2022 - Jul 2023",
       location: "Dhaka, Bangladesh",
       organization: "Neovo Tech Ltd.",
       role: "ML Intern → Data Scientist & ML Engineer",
@@ -87,7 +86,7 @@ window.PORTFOLIO_CV = {
     },
     {
       sortDate: "2021-09",
-      date: "Sep 2021 — Sep 2022",
+      date: "Sep 2021 - Sep 2022",
       location: "Dhaka, Bangladesh",
       organization: "Apurba-NSU R&D Lab",
       role: "Research Assistant",
@@ -113,124 +112,165 @@ window.PORTFOLIO_CV = {
 
   projects: [
     {
-      title: "PhyGHT",
+      title: "PhyGHT: Physics-Guided HyperGraph Transformer for Signal Purification at the HL-LHC",
       context: "KDD 2026",
-      subtitle: "Physics-Guided HyperGraph Transformer for Signal Purification at the HL-LHC",
       summary: "Designed a physics-guided hypergraph transformer for pileup mitigation, reaching R² = 0.932 for energy and R² = 0.836 for mass correction under extreme pileup.",
       metrics: [
         { value: "40.4 ms", label: "latency" },
         { value: "8.7×", label: "faster than ParticleNet" }
       ],
-      links: [{ label: "View project", url: "https://github.com/rAIson-Lab/PhyGHT" }],
-      featured: true
+      image: "images/projects/phyght-architecture.png",
+      imageAlt: "PhyGHT model architecture for physics-guided particle pileup mitigation",
+      imageSource: "https://arxiv.org/abs/2602.20475",
+      figureCaption: "PhyGHT architecture",
+      links: [{ label: "View project", url: "https://github.com/rAIson-Lab/PhyGHT" }]
     },
     {
-      title: "G²D",
+      title: "G²D: Boosting Multimodal Learning with Gradient-Guided Distillation",
       context: "ICCV 2025",
-      subtitle: "Gradient-Guided Distillation for Multimodal Learning",
       summary: "Created an open-source knowledge-distillation framework and Sequential Modality Prioritization technique to counter modality imbalance.",
       metrics: [
         { value: "18%+", label: "accuracy gain" },
         { value: "0.5%", label: "memory overhead" }
       ],
-      links: [{ label: "View project", url: "https://github.com/rAIson-Lab/G2D" }],
-      featured: true
+      image: "images/projects/g2d-architecture.png",
+      imageAlt: "G squared D gradient-guided distillation architecture for multimodal learning",
+      imageSource: "https://arxiv.org/abs/2506.21514",
+      figureCaption: "G²D architecture",
+      links: [{ label: "View project", url: "https://github.com/rAIson-Lab/G2D" }]
     },
     {
-      title: "MIS-ME",
+      title: "MIS-ME: A Multi-modal Framework for Soil Moisture Estimation",
       context: "DSAA 2024",
       summary: "Fused soil-patch imagery with meteorological data, reducing MAPE by 3.25% over meteorological-only models, 2.15% over image-only models, and at least 1.5% over conventional fusion.",
       metrics: [],
-      links: [{ label: "Read the paper", url: "https://ieeexplore.ieee.org/abstract/document/10722779" }],
-      featured: true
+      image: "images/projects/mis-me-architecture.png",
+      imageAlt: "MIS-ME multimodal architecture combining soil images and meteorological data",
+      imageSource: "https://arxiv.org/abs/2408.00963",
+      figureCaption: "MIS-ME multimodal architecture",
+      links: [{ label: "Read the paper", url: "https://ieeexplore.ieee.org/abstract/document/10722779" }]
     },
     {
-      title: "Bangla-Wave",
+      title: "Bangla-Wave: Improving Bangla Automatic Speech Recognition Utilizing N-gram Language Models",
       context: "ICSCA 2023",
       summary: "Fine-tuned wav2vec 2.0 on 399 hours of Bengali speech and added an n-gram post-processor, achieving 4.66% WER and 1.54% CER.",
       metrics: [],
-      links: [{ label: "Read the paper", url: "https://arxiv.org/abs/2209.12650" }],
-      featured: true
+      image: "images/projects/bangla-wave-architecture.png",
+      imageAlt: "Bangla-Wave speech recognition and language-model correction pipeline",
+      imageSource: "https://arxiv.org/abs/2209.12650",
+      figureCaption: "Bangla-Wave pipeline",
+      links: [{ label: "Read the paper", url: "https://arxiv.org/abs/2209.12650" }]
     },
     {
-      title: "Contract language intelligence",
+      title: "An Open Source Contractual Language Understanding Application Using Machine Learning",
       context: "Open source",
       summary: "Co-led an end-to-end legal-contract review application, improving RoBERTa-base AUPR by 4% and reaching 20K monthly model downloads.",
       metrics: [],
-      links: [{ label: "View project", url: "https://github.com/afra-tech/defactolaw" }],
-      featured: true
+      image: "images/projects/contract-system-diagram.png",
+      imageAlt: "System diagram for the contract-language review application from document upload to highlighted clauses",
+      imageSource: "https://aclanthology.org/2022.lateraisse-1.6/",
+      figureCaption: "Contract-review system",
+      links: [{ label: "View project", url: "https://github.com/afra-tech/defactolaw" }]
     },
     {
-      title: "Hadoop k-NN",
+      title: "Distributed k-NN with Hadoop MapReduce",
       context: "Distributed systems",
       summary: "Engineered a distributed k-NN classifier from scratch with a memory-efficient priority-queue reducer and benchmarked it on single- and multi-node Hadoop clusters.",
       metrics: [],
-      links: [],
-      featured: true
+      image: "images/projects/hadoop-knn-mapreduce.png",
+      imageAlt: "Distributed k-NN pipeline using HDFS data blocks, parallel Hadoop mappers, a global top-k reducer, and majority-vote prediction",
+      figureCaption: "Distributed k-NN MapReduce pipeline",
+      links: []
     },
     {
-      title: "PUMiNet",
-      context: "",
+      title: "PUMiNet: PileUp Mitigation at the HL-LHC Using Attention for Event-Wide Context",
+      context: "PAKDD 2025",
       summary: "Event-wide attention for HL-LHC pileup mitigation; R² of 0.912 for energy fraction and 0.720 for mass fraction, enabling improved Higgs-boson mass reconstruction.",
       metrics: [],
-      links: [{ label: "Paper", url: "https://arxiv.org/abs/2503.02860" }],
-      featured: false
+      image: "images/projects/puminet-architecture.png",
+      imageAlt: "PUMiNet neural network architecture for event-wide pileup mitigation",
+      imageSource: "https://arxiv.org/abs/2503.02860",
+      figureCaption: "PUMiNet architecture",
+      links: [{ label: "Paper", url: "https://arxiv.org/abs/2503.02860" }]
     },
     {
-      title: "Adaptive Contextual Masking",
-      context: "",
+      title: "Exploiting Adaptive Contextual Masking for Aspect-Based Sentiment Analysis",
+      context: "PAKDD 2024",
       summary: "Gradient-learned masking for aspect term extraction and sentiment classification that outperformed comparison methods on SemEval benchmarks.",
       metrics: [],
-      links: [{ label: "Paper", url: "https://doi.org/10.1007/978-981-97-2266-2_12" }],
-      featured: false
+      image: "images/projects/adaptive-contextual-masking.png",
+      imageAlt: "Adaptive contextual masking threshold strategy for aspect-based sentiment analysis",
+      imageSource: "https://arxiv.org/abs/2402.13722",
+      figureCaption: "Adaptive masking strategy",
+      links: [{ label: "Paper", url: "https://doi.org/10.1007/978-981-97-2266-2_12" }]
     },
     {
-      title: "COLT",
-      context: "",
+      title: "COLT: Cyclic Overlapping Lottery Tickets for Faster Pruning of Convolutional Neural Networks",
+      context: "IEEE TAI 2025",
       summary: "Class-wise overlapping lottery tickets that required fewer pruning iterations than IMP and transferred across datasets without performance loss.",
       metrics: [],
-      links: [{ label: "Paper", url: "https://ieeexplore.ieee.org/abstract/document/10855806" }],
-      featured: false
+      image: "images/projects/colt-method.png",
+      imageAlt: "COLT cyclic overlapping lottery ticket pruning method",
+      imageSource: "https://arxiv.org/abs/2212.12770",
+      figureCaption: "COLT pruning method",
+      links: [{ label: "Paper", url: "https://ieeexplore.ieee.org/abstract/document/10855806" }]
     },
     {
-      title: "LILA-BOTI",
-      context: "",
+      title: "LILA-BOTI: Leveraging Isolated Letter Accumulations by Ordering Teacher Insights for Bangla Handwriting Recognition",
+      context: "ICPR 2022",
       summary: "Knowledge distillation for Bangla handwriting recognition, improving minor-class F1-Macro by up to 3.5% and overall word recognition by up to 4%.",
       metrics: [],
-      links: [{ label: "Paper", url: "https://doi.org/10.1109/ICPR56361.2022.9956141" }],
-      featured: false
+      image: "images/projects/lila-boti-architecture.png",
+      imageAlt: "LILA-BOTI teacher-student knowledge-distillation pipeline for Bangla handwriting recognition",
+      imageSource: "https://arxiv.org/abs/2205.11420",
+      figureCaption: "LILA-BOTI training pipeline",
+      links: [{ label: "Paper", url: "https://doi.org/10.1109/ICPR56361.2022.9956141" }]
     },
     {
-      title: "Water-level forecasting",
-      context: "",
+      title: "Water Level Forecasting Using Spatiotemporal Attention-Based Long Short-Term Memory Network",
+      context: "Water 2022",
       summary: "Spatiotemporal attention LSTM for river forecasting in Bangladesh, improving Dhaka-station accuracy by 3.44%.",
       metrics: [],
-      links: [{ label: "Paper", url: "https://doi.org/10.3390/w14040612" }],
-      featured: false
+      image: "images/projects/water-level-architecture.png",
+      imageAlt: "Spatiotemporal attention LSTM architecture for water-level forecasting",
+      imageSource: "https://doi.org/10.3390/w14040612",
+      figureCaption: "Spatiotemporal attention LSTM",
+      links: [{ label: "Paper", url: "https://doi.org/10.3390/w14040612" }]
     },
     {
-      title: "IoT air-quality system",
-      context: "",
+      title: "IoT-Based Air Pollution Monitoring & Prediction System",
+      context: "ICISET 2022",
       summary: "Led a team of three building a sensor-to-cloud system and ARIMA model using 144 hourly observations for next-day forecasts with over 90% reported accuracy.",
       metrics: [],
-      links: [{ label: "Paper", url: "https://doi.org/10.1109/ICISET54810.2022.9775871" }],
-      featured: false
+      image: "images/projects/iot-air-quality-system.png",
+      imageAlt: "Arduino Mega wiring diagram for the IoT air-quality system with dust, ammonia, carbon monoxide, temperature, humidity, and Wi-Fi sensors",
+      imageSource: "https://doi.org/10.1109/ICISET54810.2022.9775871",
+      figureCaption: "IoT sensor wiring diagram",
+      links: [{ label: "Paper", url: "https://doi.org/10.1109/ICISET54810.2022.9775871" }]
     },
     {
       title: "My Reading Room",
-      context: "",
+      context: "Open source",
       summary: "Django learning platform with document sharing, reading-time tracking, and OpenCV-based engagement monitoring.",
       metrics: [],
-      links: [],
-      featured: false
+      image: "images/projects/my-reading-room-use-case.png",
+      imageAlt: "My Reading Room use-case diagram showing teacher and student features for classes, reading materials, face detection, and reading analytics",
+      imageSource: "https://github.com/MohammedRakib/My-Reading-Room",
+      imageSourceLabel: "Repository",
+      figureCaption: "Reading Room use-case diagram",
+      links: []
     },
     {
-      title: "AgeDB age estimation",
-      context: "",
+      title: "AgeDB Age Estimation",
+      context: "Computer vision",
       summary: "Fine-tuned ResNet-152 with CORAL loss to 9.07-year MAE versus the cited DEX result of 13.1, using 20× fewer samples; CORAL outperformed cross-entropy.",
       metrics: [],
-      links: [],
-      featured: false
+      image: "images/projects/agedb-age-estimation.png",
+      imageAlt: "CORAL age-estimation architecture with a ResNet backbone, extended ordinal labels, and weight-shared binary tasks",
+      imageSource: "https://github.com/MohammedRakib/Age-Classification",
+      imageSourceLabel: "Repository",
+      figureCaption: "CORAL age-estimation architecture",
+      links: []
     }
   ],
 
@@ -324,7 +364,7 @@ window.PORTFOLIO_CV = {
   education: [
     {
       sortDate: "2023",
-      date: "2023 — Present",
+      date: "2023 - Present",
       degree: "PhD, Computer Science",
       school: "Oklahoma State University",
       location: "Stillwater, Oklahoma",
@@ -335,7 +375,7 @@ window.PORTFOLIO_CV = {
     },
     {
       sortDate: "2023",
-      date: "2023 — May 2026",
+      date: "2023 - May 2026",
       degree: "MS, Computer Science",
       school: "Oklahoma State University",
       location: "Stillwater, Oklahoma",
@@ -347,7 +387,7 @@ window.PORTFOLIO_CV = {
     },
     {
       sortDate: "2017-09",
-      date: "Sep 2017 — Sep 2021",
+      date: "Sep 2017 - Sep 2021",
       degree: "BS, Computer Science & Engineering",
       school: "North South University",
       location: "Dhaka, Bangladesh",
@@ -414,33 +454,6 @@ window.PORTFOLIO_CV = {
       mark: "V",
       title: "Volunteer",
       description: "Supported fundraising for SCARS to assist underprivileged communities."
-    }
-  ],
-
-  skillGroups: [
-    {
-      title: "AI & data science",
-      items: ["PyTorch", "TensorFlow", "Keras", "scikit-learn", "Hugging Face", "OpenCV", "Pandas", "Matplotlib", "Seaborn", "NLP", "computer vision"]
-    },
-    {
-      title: "Languages",
-      items: ["Python", "Java", "C++", "C", "SQL", "shell scripting", "JavaScript", "HTML", "CSS", "Arduino", "x86 assembly"]
-    },
-    {
-      title: "Backend & web",
-      items: ["FastAPI", "Django", "Flask", "REST APIs", "Nginx", "Celery", "RabbitMQ", "Stripe integrations"]
-    },
-    {
-      title: "Cloud & infrastructure",
-      items: ["AWS EC2 and S3", "Docker", "Kubernetes", "Prometheus", "PromQL", "CronJobs"]
-    },
-    {
-      title: "Data & distributed systems",
-      items: ["Apache Spark", "Hadoop MapReduce", "MySQL", "PostgreSQL", "MongoDB", "Redis", "NoSQL"]
-    },
-    {
-      title: "Engineering workflow",
-      items: ["Git", "Bitbucket", "Linux", "testing", "model deployment", "monitoring", "data pipelines"]
     }
   ]
 };

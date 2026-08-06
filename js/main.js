@@ -124,6 +124,26 @@ document.addEventListener("DOMContentLoaded", () => {
       .sort((a, b) => (b.date || "0000-00").localeCompare(a.date || "0000-00"))
     : [];
   const newsList = document.querySelector("#news-list");
+  const newsToggle = document.querySelector("#news-toggle");
+  const newsPreviewLimit = 10;
+
+  const updateNewsVisibility = (expanded) => {
+    if (!newsList) return;
+
+    const cards = [...newsList.querySelectorAll(".news-card")];
+    const remainingCount = Math.max(cards.length - newsPreviewLimit, 0);
+    const canToggle = Boolean(newsToggle && remainingCount);
+    cards.forEach((card, index) => {
+      card.hidden = canToggle && !expanded && index >= newsPreviewLimit;
+    });
+
+    if (!newsToggle) return;
+    newsToggle.hidden = remainingCount === 0;
+    newsToggle.setAttribute("aria-expanded", String(expanded));
+    newsToggle.textContent = expanded
+      ? "Show fewer updates"
+      : `Show ${remainingCount} older ${remainingCount === 1 ? "update" : "updates"}`;
+  };
 
   const renderNews = () => {
     if (!newsList || !newsItems.length) return;
@@ -175,10 +195,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     newsList.append(fragment);
-
+    updateNewsVisibility(false);
   };
 
   renderNews();
+
+  newsToggle?.addEventListener("click", () => {
+    const expanded = newsToggle.getAttribute("aria-expanded") === "true";
+    updateNewsVisibility(!expanded);
+  });
 
   const cvContent = window.PORTFOLIO_CV && typeof window.PORTFOLIO_CV === "object"
     ? window.PORTFOLIO_CV
@@ -291,85 +316,121 @@ document.addEventListener("DOMContentLoaded", () => {
     links.forEach((item, index) => {
       const link = createContentLink(item.label || "View", item.url, className);
       if (!link) return;
+      if (className === "project-link") {
+        const marker = document.createElement("span");
+        marker.setAttribute("aria-hidden", "true");
+        marker.textContent = "↗";
+        link.append(document.createTextNode(" "), marker);
+      }
       if (index > 0) container.append(document.createTextNode(" "));
       container.append(link);
     });
   };
 
+  const appendProjectFigure = (container, item) => {
+    const figure = document.createElement("figure");
+    figure.className = "project-figure";
+    const hasImage = isSafeUrl(item.image) && typeof item.imageAlt === "string" && item.imageAlt.trim();
+
+    if (!hasImage) {
+      figure.classList.add("project-figure-placeholder");
+      figure.setAttribute("aria-hidden", "true");
+      const placeholder = document.createElement("div");
+      placeholder.className = "project-figure-placeholder-body";
+      placeholder.textContent = item.title;
+      const caption = document.createElement("figcaption");
+      caption.textContent = item.context || "Project";
+      figure.append(placeholder, caption);
+      container.append(figure);
+      return;
+    }
+
+    const image = document.createElement("img");
+    image.src = item.image;
+    image.alt = item.imageAlt;
+    image.loading = "lazy";
+    image.decoding = "async";
+    const sourceLabel = typeof item.imageSourceLabel === "string" && item.imageSourceLabel.trim()
+      ? item.imageSourceLabel.trim()
+      : "Paper";
+
+    if (isSafeUrl(item.imageSource)) {
+      const imageLink = createContentLink("", item.imageSource, "project-figure-link");
+      if (imageLink) {
+        imageLink.setAttribute("aria-label", `Open the ${sourceLabel.toLowerCase()} for ${item.title}`);
+        imageLink.append(image);
+        figure.append(imageLink);
+      }
+    } else {
+      figure.append(image);
+    }
+
+    if (!figure.querySelector("img")) figure.append(image);
+
+    const captionText = typeof item.figureCaption === "string" && item.figureCaption.trim()
+      ? item.figureCaption
+      : "Project figure";
+    const caption = document.createElement("figcaption");
+    caption.append(document.createTextNode(captionText));
+    if (isSafeUrl(item.imageSource)) {
+      const sourceLink = createContentLink(sourceLabel, item.imageSource);
+      if (sourceLink) caption.append(document.createTextNode(" · "), sourceLink);
+    }
+    figure.append(caption);
+    container.append(figure);
+  };
+
   const renderProjects = () => {
-    const featuredContainer = document.querySelector("#project-list");
-    const archiveContainer = document.querySelector("#project-archive-list");
-    if (!Array.isArray(cvContent?.projects)) return;
+    const container = document.querySelector("#project-list");
+    if (!container || !Array.isArray(cvContent?.projects)) return;
 
     const projects = cvContent.projects.filter((item) => item && item.title && item.summary);
-    const featured = projects.filter((item) => item.featured !== false);
-    const archived = projects.filter((item) => item.featured === false);
+    if (!projects.length) return;
 
-    if (featuredContainer && featured.length) {
-      const fragment = document.createDocumentFragment();
-      featured.forEach((item, index) => {
-        const article = document.createElement("article");
-        article.className = `project-card${index < 2 ? " project-featured" : ""}${index === 1 ? " alt" : ""}`;
+    const fragment = document.createDocumentFragment();
+    projects.forEach((item, index) => {
+      const article = document.createElement("article");
+      article.className = "project-card";
+      const content = document.createElement("div");
+      content.className = "project-content";
 
-        const top = document.createElement("div");
-        top.className = "project-top";
-        const number = document.createElement("span");
-        number.className = "project-index";
-        number.textContent = String(index + 1).padStart(2, "0");
-        const context = document.createElement("span");
-        context.className = "project-year";
-        context.textContent = item.context || "Project";
-        top.append(number, context);
+      const top = document.createElement("div");
+      top.className = "project-top";
+      const number = document.createElement("span");
+      number.className = "project-index";
+      number.textContent = String(index + 1).padStart(2, "0");
+      const context = document.createElement("span");
+      context.className = "project-year";
+      context.textContent = item.context || "Project";
+      top.append(number, context);
 
-        const title = document.createElement("h3");
-        title.textContent = item.title;
-        article.append(top, title);
+      const title = document.createElement("h3");
+      title.textContent = item.title;
+      const summary = document.createElement("p");
+      summary.textContent = item.summary;
+      content.append(top, title, summary);
 
-        if (item.subtitle) {
-          const subtitle = document.createElement("p");
-          subtitle.className = "project-subtitle";
-          subtitle.textContent = item.subtitle;
-          article.append(subtitle);
-        }
+      if (Array.isArray(item.metrics) && item.metrics.length) {
+        const metrics = document.createElement("div");
+        metrics.className = "metric-row";
+        item.metrics.forEach((metric) => {
+          if (!metric?.value) return;
+          const span = document.createElement("span");
+          const value = document.createElement("strong");
+          value.textContent = metric.value;
+          span.append(value, document.createTextNode(metric.label ? ` ${metric.label}` : ""));
+          metrics.append(span);
+        });
+        if (metrics.children.length) content.append(metrics);
+      }
 
-        const summary = document.createElement("p");
-        summary.textContent = item.summary;
-        article.append(summary);
+      appendProjectLinks(content, item.links, "project-link");
+      article.append(content);
+      appendProjectFigure(article, item);
+      fragment.append(article);
+    });
 
-        if (Array.isArray(item.metrics) && item.metrics.length) {
-          const metrics = document.createElement("div");
-          metrics.className = "metric-row";
-          item.metrics.forEach((metric) => {
-            if (!metric?.value) return;
-            const span = document.createElement("span");
-            const value = document.createElement("strong");
-            value.textContent = metric.value;
-            span.append(value, document.createTextNode(metric.label ? ` ${metric.label}` : ""));
-            metrics.append(span);
-          });
-          if (metrics.children.length) article.append(metrics);
-        }
-
-        appendProjectLinks(article, item.links, "project-link");
-        fragment.append(article);
-      });
-      featuredContainer.replaceChildren(fragment);
-    }
-
-    if (archiveContainer && archived.length) {
-      const fragment = document.createDocumentFragment();
-      archived.forEach((item) => {
-        const article = document.createElement("article");
-        const title = document.createElement("h3");
-        title.textContent = item.title;
-        const summary = document.createElement("p");
-        summary.textContent = item.summary;
-        article.append(title, summary);
-        appendProjectLinks(article, item.links);
-        fragment.append(article);
-      });
-      archiveContainer.replaceChildren(fragment);
-    }
+    container.replaceChildren(fragment);
   };
 
   const renderPublications = () => {
@@ -523,32 +584,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (fragment.childNodes.length) container.replaceChildren(fragment);
   };
 
-  const renderSkills = () => {
-    const container = document.querySelector("#skills-list");
-    if (!container || !Array.isArray(cvContent?.skillGroups) || !cvContent.skillGroups.length) return;
-
-    const fragment = document.createDocumentFragment();
-    cvContent.skillGroups.filter((item) => item && item.title && Array.isArray(item.items)).forEach((item) => {
-      const group = document.createElement("div");
-      const title = document.createElement("h3");
-      title.textContent = item.title;
-      const values = document.createElement("p");
-      values.textContent = item.items.join(", ");
-      group.append(title, values);
-      fragment.append(group);
-    });
-
-    if (fragment.childNodes.length) container.replaceChildren(fragment);
-  };
-
   if (cvContent) {
-    renderExperience();
-    renderProjects();
-    renderPublications();
     renderEducation();
+    renderExperience();
+    renderPublications();
+    renderProjects();
     renderAwards();
     renderService();
-    renderSkills();
   }
 
   if ("IntersectionObserver" in window) {
