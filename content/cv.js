@@ -403,6 +403,11 @@ window.PORTFOLIO_CV = {
   awards: [
     {
       year: "2026",
+      title: "1st place, eBay VibeCoding Hackathon 2026",
+      description: "$300 Award for winning the Challenge: \"Making Buying & Selling Feel Effortless & Fun at eBay.\""
+    },
+    {
+      year: "2026",
       title: "Google Cloud Research Credits",
       description: "$1,000 award supporting research computing."
     },
@@ -413,7 +418,7 @@ window.PORTFOLIO_CV = {
     },
     {
       year: "2022",
-      title: "Bengali ASR Competition Runner-up",
+      title: "Runner-up, Bengali ASR Competition",
       description: "DL Sprint, BUET CSE Fest."
     },
     {
@@ -436,17 +441,17 @@ window.PORTFOLIO_CV = {
   service: [
     {
       mark: "R",
-      title: "Peer reviewer",
-      description: "BMVC 2026, CVPR 2025, ICCV 2025, and IJCNN 2024."
+      title: "Peer Reviewer",
+      description: "Neural Networks, BMVC 2026, CVPR 2025, ICCV 2025, and IJCNN 2024."
     },
     {
       mark: "W",
-      title: "Workshop leader",
+      title: "Workshop Leader",
       description: "Led an OSU DataBytes workshop on multimodal learning and hands-on PyTorch and deep-learning workshops at NSU."
     },
     {
       mark: "M",
-      title: "Student mentor",
+      title: "Student Mentor",
       description: "Mentored teams at the OSU ACM Appathon 2025.",
       links: [{ label: "OSU ACM Appathon 2025", url: "images/Mentor-certificate.png" }]
     },
