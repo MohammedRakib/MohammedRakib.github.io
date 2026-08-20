@@ -30,7 +30,7 @@ window.PORTFOLIO_NEWS = [
   },
   {
     date: "2026-08",
-    displayDate: "Aug 2026",
+    displayDate: "July 2026",
     category: "Award",
     title: "1st place, eBay VibeCoding Hackathon 2026",
     description: "$300 Award for winning the Challenge: \"Making Buying & Selling Feel Effortless & Fun at eBay.\"",
