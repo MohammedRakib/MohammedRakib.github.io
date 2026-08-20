@@ -21,6 +21,14 @@
 
 window.PORTFOLIO_NEWS = [
   {
+    date: "2026-08",
+    displayDate: "Aug 2026",
+    category: "Service",
+    title: "Reviewer for Neural Networks",
+    description: "Served as a peer reviewer for the Neural Networks Journal.",
+    links: [{ label: "Neural Networks", url: "https://www.sciencedirect.com/journal/neural-networks" }]
+  },
+  {
     date: "2026-06",
     displayDate: "Jun 2026",
     category: "Service",
